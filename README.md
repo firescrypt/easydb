@@ -1,34 +1,28 @@
-# easydb
+# xenialbase db
 
-Easy asynchronous JSON databse
+an open source database creator built using node
 
-[![NPM](https://nodei.co/npm/easydb.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easydb/)
 
 # How to install
 
 ```sh
-$ npm install easydb
+$ npm i xenialdb
 ```
 
 # Example usage
 
 ```javascript
-var EasyDB = require('easydb')
-var db = new EasyDB('file.json')
-
+var xenialdb = require('xenialdb')
+var db = new xenialdb('data.json')
 db.ready = function(){
-
-	//Print file.json value
-	console.log(db.value)
-
-	//Manipulate db.v object as you want
-	db.value.a = 1
-	db.value.b = 2
-
-	//Write db.value to file.json
+  db.value.c= "turtle is the best"
+  db.value.d="hello"
+  db.value.message="unknown"
 	db.write(function(){
-		console.log("Data stored!");
+		console.log("Data stored!")
+    console.log(db.value);
 	})
 	
 }
+
 ```
